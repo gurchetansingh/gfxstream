@@ -245,12 +245,6 @@ struct DeviceInfo {
         return (emulateTextureEtc2 && gfxstream::vk::isEtc2(format)) ||
                (emulateTextureAstc && gfxstream::vk::isAstc(format));
     }
-
-#ifdef _WIN32
-    PFN_vkGetMemoryWin32HandleKHR getMemoryHandleFunc = nullptr;
-#else
-    PFN_vkGetMemoryFdKHR getMemoryHandleFunc = nullptr;
-#endif
 };
 
 struct PhysicalQueuePendingOps {
